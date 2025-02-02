@@ -1,0 +1,8 @@
+{
+	"name": "gid-gtk4-examples",
+	"description": "giD Gtk4 examples",
+	"authors": ["Element Green <element@kymorphia.com>"],
+	"dependencies": {
+		"gid:gtk-4-0": "==0.9.0"
+	}
+}
