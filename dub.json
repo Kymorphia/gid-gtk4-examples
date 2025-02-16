@@ -4,6 +4,6 @@
 	"authors": ["Element Green <element@kymorphia.com>"],
 	"license": "MIT",
 	"dependencies": {
-		"gid:gtk-4-0": "==0.9.1"
+		"gid:gtk-4-0": "==0.9.2"
 	}
 }
