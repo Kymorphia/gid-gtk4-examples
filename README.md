@@ -1,4 +1,4 @@
-= giD Gtk4 Examples
+# giD Gtk4 Examples
 
 Here you will find an example application written using the D language and utilizing the [giD](https://github.com/Kymorphia/gid/) Gtk4 bindings.
 
@@ -7,11 +7,11 @@ Please consult that documentation for details on Gtk4 widgets which are relevant
 The PyGObject Gtk4 API is fairly similar to the giD D binding and the example D code is intended to be used directly as a quickstart guide.
 Each example has its own D source file and they are launched from within the example application by double clicking on them in the tree.
 
-== Building on Linux
+## Building on Linux
 
 Install your favorite D compiler and run `dub build`.
 
-== Building on Windows
+## Building on Windows
 
 Here are some instructions for installing MSYS2, LDC2, dub, and Gtk4 packages for building the Gtk4 Examples.
 There are many other ways to configure a Windows D development environment, this is just one example.
