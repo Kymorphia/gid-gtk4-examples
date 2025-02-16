@@ -1,6 +1,6 @@
 {
 	"name": "gid-gtk4-examples",
-	"description": "giD Gtk4 examples",
+	"description": "giD Gtk 4 examples",
 	"authors": ["Element Green <element@kymorphia.com>"],
 	"license": "MIT",
 	"dependencies": {
