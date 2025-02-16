@@ -7,6 +7,8 @@ Please consult that documentation for details on Gtk4 widgets which are relevant
 The PyGObject Gtk4 API is fairly similar to the giD D binding and the example D code is intended to be used directly as a quickstart guide.
 Each example has its own D source file and they are launched from within the example application by double clicking on them in the tree.
 
+![Screenshot](images/screenshot.jpg)
+
 ## Building on Linux
 
 Install your favorite D compiler and run `dub build`.
