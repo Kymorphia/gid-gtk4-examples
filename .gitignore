@@ -1,2 +1,3 @@
 *.so
+dub.selections.json
 gid-gtk4-examples

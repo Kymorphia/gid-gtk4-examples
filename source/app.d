@@ -2,7 +2,6 @@ module app;
 
 import Gio.Types : ApplicationFlags;
 import Gio.ApplicationGio;
-import Gio.ApplicationCommandLine;
 import Gio.MenuModel;
 import Gio.SimpleAction;
 import GLib.Types : OptionArg, OptionFlags;
@@ -89,11 +88,9 @@ class ExampleApp : Application
 
     this()
     {
-        super("org.example.App", ApplicationFlags.HandlesCommandLine);
-        addMainOption("test", 't', cast(OptionFlags)0, OptionArg.None, "Command line test", null);
+        super("org.example.App", ApplicationFlags.DefaultFlags);
         connectStartup(&onStartup);
         connectActivate(&onActivate);
-        connectCommandLine(&onCommandLine);
     }
 
     void onStartup(ApplicationGio app)
@@ -116,17 +113,6 @@ class ExampleApp : Application
             window = new AppWindow(this);
 
         window.present();
-    }
-
-    int onCommandLine(ApplicationCommandLine commandLine, ApplicationGio app)
-    {
-        auto options = commandLine.getOptionsDict();
-
-        if (options.contains("test"))
-            writeln("Test argument received");
-
-        activate;
-        return 0;
     }
 
     void onAbout(VariantG parameter, SimpleAction action)
