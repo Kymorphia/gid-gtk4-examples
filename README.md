@@ -64,10 +64,20 @@ cd ..
 ```
 
 * Clone the gid-gtk4-examples repository
-  `git clone https://github.com/Kymorphia/gid-gtk4-examples.git`
+
+```sh
+git clone https://github.com/Kymorphia/gid-gtk4-examples.git
+```
+
 * Change to the gid-gtk4-examples directory and build it with dub.
 
 ```sh
 cd gid-gtk4-examples
 dub build
+```
+
+* Run the gid-gtk4-examples executable
+
+```sh
+./gid-gtk4-examples
 ```
