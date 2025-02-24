@@ -1,12 +1,12 @@
 module drop_down;
 
-import GObject.ObjectG;
-import GObject.ParamSpec;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.DropDown;
-import Gtk.StringList;
-import Gtk.StringObject;
+import gobject.object;
+import gobject.param_spec;
+import gtk.application;
+import gtk.application_window;
+import gtk.drop_down;
+import gtk.string_list;
+import gtk.string_object;
 import std.stdio : writeln;
 import std.string : split;
 

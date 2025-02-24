@@ -1,14 +1,14 @@
 module list_box;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.Label;
-import Gtk.ListBox;
-import Gtk.ListBoxRow;
-import Gtk.Switch;
-import Gtk.Types : Align, Orientation, SelectionMode;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.label;
+import gtk.list_box;
+import gtk.list_box_row;
+import gtk.switch_;
+import gtk.types : Align, Orientation, SelectionMode;
 
 import example;
 

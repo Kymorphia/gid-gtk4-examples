@@ -1,17 +1,17 @@
 module spinner;
 
-import GLib.Global : timeoutAdd;
-import GLib.Source : Source;
-import GLib.Types : PRIORITY_DEFAULT;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.Button;
-import Gtk.Entry;
-import Gtk.Label;
-import Gtk.Spinner;
-import Gtk.Types : Orientation;
-import Gtk.Widget;
+import glib.global : timeoutAdd;
+import glib.source : Source;
+import glib.types : PRIORITY_DEFAULT;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.button;
+import gtk.entry;
+import gtk.label;
+import gtk.spinner;
+import gtk.types : Orientation;
+import gtk.widget;
 
 import std.conv : to;
 

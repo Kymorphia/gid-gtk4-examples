@@ -1,10 +1,10 @@
 module grid;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Button;
-import Gtk.Grid;
-import Gtk.Types : PositionType;
+import gtk.application;
+import gtk.application_window;
+import gtk.button;
+import gtk.grid;
+import gtk.types : PositionType;
 
 import example;
 

@@ -1,18 +1,18 @@
 module entry;
 
-import GLib.Global : timeoutAdd;
-import GLib.Source;
-import GLib.Types : PRIORITY_DEFAULT;
-import GObject.Value;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.Entry;
-import Gtk.HeaderBar;
-import Gtk.PasswordEntry;
-import Gtk.SearchEntry;
-import Gtk.Types : EntryIconPosition, Orientation;
+import glib.global : timeoutAdd;
+import glib.source;
+import glib.types : PRIORITY_DEFAULT;
+import gobject.value;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.entry;
+import gtk.header_bar;
+import gtk.password_entry;
+import gtk.search_entry;
+import gtk.types : EntryIconPosition, Orientation;
 
 import example;
 

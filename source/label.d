@@ -1,13 +1,13 @@
 module label;
 
-import GObject.ObjectG;
-import GObject.ParamSpec;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.Button;
-import Gtk.Label;
-import Gtk.Types : Justification, Orientation;
+import gobject.object;
+import gobject.param_spec;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.button;
+import gtk.label;
+import gtk.types : Justification, Orientation;
 import std.stdio : writeln;
 import std.string : split;
 

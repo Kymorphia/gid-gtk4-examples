@@ -1,12 +1,12 @@
 module spin_button;
 
-import Gtk.Adjustment;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.SpinButton;
-import Gtk.Types : Orientation, SpinButtonUpdatePolicy;
+import gtk.adjustment;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.spin_button;
+import gtk.types : Orientation, SpinButtonUpdatePolicy;
 import std.stdio : writeln;
 
 import example;

@@ -1,15 +1,15 @@
 module stack_switcher;
 
-import GObject.Binding;
-import GObject.Types : BindingFlags;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.CheckButton;
-import Gtk.HeaderBar;
-import Gtk.Label;
-import Gtk.Stack;
-import Gtk.StackSwitcher;
-import Gtk.Types : Align, StackTransitionType;
+import gobject.binding;
+import gobject.types : BindingFlags;
+import gtk.application;
+import gtk.application_window;
+import gtk.check_button;
+import gtk.header_bar;
+import gtk.label;
+import gtk.stack;
+import gtk.stack_switcher;
+import gtk.types : Align, StackTransitionType;
 
 import example;
 

@@ -1,12 +1,12 @@
 module notebook;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.Image;
-import Gtk.Label;
-import Gtk.Notebook;
-import Gtk.Types : Orientation;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.image;
+import gtk.label;
+import gtk.notebook;
+import gtk.types : Orientation;
 
 import example;
 

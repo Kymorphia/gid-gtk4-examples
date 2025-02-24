@@ -1,10 +1,10 @@
 module link_button;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.LinkButton;
-import Gtk.Types : Orientation;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.link_button;
+import gtk.types : Orientation;
 import std.stdio : writeln;
 
 import example;

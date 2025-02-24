@@ -1,7 +1,7 @@
 module example;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
+import gtk.application;
+import gtk.application_window;
 
 /// Example categories which are branches in the example tree
 enum ExampleCategory

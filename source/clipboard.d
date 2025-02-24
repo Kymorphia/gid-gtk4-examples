@@ -1,20 +1,20 @@
 module clipboard;
 
-import Gdk.Clipboard;
-import Gdk.ContentProvider;
-import Gdk.Display;
-import Gdk.Texture;
-import Gio.AsyncResult;
-import GObject.ObjectG;
-import GObject.Value;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.Button;
-import Gtk.Entry;
-import Gtk.Picture;
-import Gtk.Types : Align, Orientation;
-import Pango.Types : Weight, Style, Underline;
+import gdk.clipboard;
+import gdk.content_provider;
+import gdk.display;
+import gdk.texture;
+import gio.async_result;
+import gobject.object;
+import gobject.value;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.button;
+import gtk.entry;
+import gtk.picture;
+import gtk.types : Align, Orientation;
+import pango.types : Weight, Style, Underline;
 
 import example;
 

@@ -1,14 +1,14 @@
 module switch_;
 
-import GObject.ObjectG;
-import GObject.ParamSpec;
-import Gtk.Adjustment;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.Switch;
-import Gtk.Types : Align, Orientation;
+import gobject.object;
+import gobject.param_spec;
+import gtk.adjustment;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.switch_;
+import gtk.types : Align, Orientation;
 import std.stdio : writeln;
 
 import example;

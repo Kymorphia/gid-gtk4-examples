@@ -1,13 +1,13 @@
 module popover;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.Button;
-import Gtk.Label;
-import Gtk.MenuButton;
-import Gtk.Popover;
-import Gtk.Types : Align, Orientation, PositionType;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.button;
+import gtk.label;
+import gtk.menu_button;
+import gtk.popover;
+import gtk.types : Align, Orientation, PositionType;
 
 import example;
 

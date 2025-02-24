@@ -1,10 +1,10 @@
 module center_box;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Button;
-import Gtk.CenterBox;
-import Gtk.Label;
+import gtk.application;
+import gtk.application_window;
+import gtk.button;
+import gtk.center_box;
+import gtk.label;
 
 import example;
 

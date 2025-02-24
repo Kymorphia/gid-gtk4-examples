@@ -1,16 +1,16 @@
 module flow_box;
 
-import cairo.Context;
-import Gdk.RGBA;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Button;
-import Gtk.DrawingArea;
-import Gtk.FlowBox;
-import Gtk.Global : renderBackground;
-import Gtk.HeaderBar;
-import Gtk.ScrolledWindow;
-import Gtk.Types : Align, PolicyType, SelectionMode;
+import cairo.context;
+import gdk.rgba;
+import gtk.application;
+import gtk.application_window;
+import gtk.button;
+import gtk.drawing_area;
+import gtk.flow_box;
+import gtk.global : renderBackground;
+import gtk.header_bar;
+import gtk.scrolled_window;
+import gtk.types : Align, PolicyType, SelectionMode;
 
 import example;
 

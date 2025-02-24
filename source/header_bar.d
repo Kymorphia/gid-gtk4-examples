@@ -1,9 +1,9 @@
 module header_bar;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Button;
-import Gtk.HeaderBar;
+import gtk.application;
+import gtk.application_window;
+import gtk.button;
+import gtk.header_bar;
 
 import example;
 

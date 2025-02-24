@@ -1,10 +1,10 @@
 module check_button;
 
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.Types : Orientation;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.types : Orientation;
 import std.stdio : writeln;
 
 import example;

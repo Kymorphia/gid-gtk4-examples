@@ -1,13 +1,13 @@
 module progress_bar;
 
-import GLib.Global : timeoutAdd;
-import GLib.Types : PRIORITY_DEFAULT;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Box;
-import Gtk.CheckButton;
-import Gtk.ProgressBar;
-import Gtk.Types : Orientation;
+import glib.global : timeoutAdd;
+import glib.types : PRIORITY_DEFAULT;
+import gtk.application;
+import gtk.application_window;
+import gtk.box;
+import gtk.check_button;
+import gtk.progress_bar;
+import gtk.types : Orientation;
 
 import example;
 

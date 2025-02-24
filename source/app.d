@@ -1,18 +1,18 @@
 module app;
 
-import Gio.Types : ApplicationFlags;
-import Gio.ApplicationGio;
-import Gio.MenuModel;
-import Gio.SimpleAction;
-import GLib.Types : OptionArg, OptionFlags;
-import GLib.VariantG;
-import GObject.ObjectG;
-import GObject.ParamSpec;
-import Gtk.AboutDialog;
-import Gtk.Application;
-import Gtk.ApplicationWindow;
-import Gtk.Builder;
-import Gtk.Label;
+import gio.types : ApplicationFlags;
+import gio.application;
+import gio.menu_model;
+import gio.simple_action;
+import glib.types : OptionArg, OptionFlags;
+import glib.variant;
+import gobject.object;
+import gobject.param_spec;
+import gtk.about_dialog;
+import gtk.application;
+import gtk.application_window;
+import gtk.builder;
+import gtk.label;
 
 import app_tree;
 
