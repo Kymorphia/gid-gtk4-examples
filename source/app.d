@@ -50,7 +50,7 @@ class AppWindow : ApplicationWindow
 {
     Label label;
 
-    this(Application app)
+    this(gtk.application.Application app)
     {
         super(app);
         setTitle("Main Window");
@@ -82,7 +82,7 @@ class AppWindow : ApplicationWindow
     }
 }
 
-class ExampleApp : Application
+class ExampleApp : gtk.application.Application
 {
     AppWindow window;
 
@@ -93,7 +93,7 @@ class ExampleApp : Application
         connectActivate(&onActivate);
     }
 
-    void onStartup(ApplicationGio app)
+    void onStartup(gio.application.Application app)
     {
         auto aboutAction = new SimpleAction("about", null);
         aboutAction.connectActivate(&onAbout);
@@ -107,7 +107,7 @@ class ExampleApp : Application
         setMenubar(cast(MenuModel)builder.getObject("menubar"));
     }
 
-    void onActivate(ApplicationGio app)
+    void onActivate(gio.application.Application app)
     {
         if (!window)
             window = new AppWindow(this);
