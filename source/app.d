@@ -64,7 +64,7 @@ class AppWindow : ApplicationWindow
         addAction(maxAction);
 
         // Keep maximize action in sync with window state
-        connectNotify("maximized", (ParamSpec pspec, ObjectG obj) {
+        connectNotify("maximized", () {
             maxAction.setState(new VariantG(isMaximized));
         });
 
@@ -93,7 +93,7 @@ class ExampleApp : gtk.application.Application
         connectActivate(&onActivate);
     }
 
-    void onStartup(gio.application.Application app)
+    void onStartup()
     {
         auto aboutAction = new SimpleAction("about", null);
         aboutAction.connectActivate(&onAbout);
@@ -107,7 +107,7 @@ class ExampleApp : gtk.application.Application
         setMenubar(cast(MenuModel)builder.getObject("menubar"));
     }
 
-    void onActivate(gio.application.Application app)
+    void onActivate()
     {
         if (!window)
             window = new AppWindow(this);
@@ -115,13 +115,13 @@ class ExampleApp : gtk.application.Application
         window.present();
     }
 
-    void onAbout(VariantG parameter, SimpleAction action)
+    void onAbout()
     {
         auto aboutDialog = new AboutDialog();
         aboutDialog.present;
     }
 
-    void onQuit(VariantG parameter, SimpleAction action)
+    void onQuit()
     {
         quit;
     }

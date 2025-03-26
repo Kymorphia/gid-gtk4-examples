@@ -96,14 +96,14 @@ class AppTree : ScrolledWindow
     return new AppTreeItem(exampleObject);
   }
 
-  private void onNameItemSetup(ObjectG obj, SignalListItemFactory factory)
+  private void onNameItemSetup(ObjectG obj)
   {
     auto treeExpander = new TreeExpander;
     treeExpander.setChild(new Label(cast(string)null));
     (cast(ListItem)obj).setChild(treeExpander);
   }
 
-  private void onNameItemBind(ObjectG obj, SignalListItemFactory factory)
+  private void onNameItemBind(ObjectG obj)
   {
     auto listItem = cast(ListItem)obj;
     auto treeListRow = cast(TreeListRow)listItem.getItem;

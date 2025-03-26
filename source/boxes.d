@@ -25,22 +25,12 @@ class BoxesWindow : ApplicationWindow
         setChild(box);
 
         auto button1 = Button.newWithLabel("Hello");
-        button1.connectClicked(&onButton1Clicked);
+        button1.connectClicked(() { writeln("Hello"); });
         box.append(button1);
 
         auto button2 = Button.newWithLabel("Goodbye");
         button2.setHexpand(true);
-        button2.connectClicked(&onButton2Clicked);
+        button2.connectClicked(() { writeln("Goodbye"); });
         box.append(button2);
-    }
-
-    void onButton1Clicked(Button button)
-    {
-        writeln("Hello");
-    }
-
-    void onButton2Clicked(Button button)
-    {
-        writeln("Goodbye");
     }
 }

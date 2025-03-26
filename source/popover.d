@@ -48,6 +48,6 @@ class PopoverWindow : ApplicationWindow
         popover2.setParent(button2);
         popover2.setPosition(PositionType.Left);
 
-        button2.connectClicked((Button btn) { popover2.popup; });
+        button2.connectClicked(() { popover2.popup; });
     }
 }

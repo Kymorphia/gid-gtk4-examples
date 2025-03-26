@@ -72,12 +72,12 @@ class ClipboardWindow : ApplicationWindow
         imageBox.append(buttonPasteImage);
     }
 
-    void onCopyTextClicked(Button button)
+    void onCopyTextClicked()
     {
         clipboard.set(new Value(entry.getText));
     }
 
-    void onPasteTextClicked(Button button)
+    void onPasteTextClicked()
     {
         clipboard.readTextAsync(null, &clipboardReadTextAsync);
     }
@@ -88,7 +88,7 @@ class ClipboardWindow : ApplicationWindow
             entry.setText(text);
     }
 
-    void onCopyImageClicked(Button button)
+    void onCopyImageClicked()
     {
         if (auto texture = cast(Texture)picture.getPaintable)
         {
@@ -97,7 +97,7 @@ class ClipboardWindow : ApplicationWindow
         }
     }
 
-    void onPasteImageClicked(Button button)
+    void onPasteImageClicked()
     {
         clipboard.readTextureAsync(null, &clipboardReadTextureAsync);
     }

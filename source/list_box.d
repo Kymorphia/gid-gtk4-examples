@@ -104,7 +104,7 @@ class ListBoxWindow : ApplicationWindow
         return data != "Fail";
     }
 
-    void onRowActivated(ListBoxRow row, ListBox listbox)
+    void onRowActivated(ListBoxRow row)
     {
         writeln((cast(ListBoxRowWithData)row).data);
     }

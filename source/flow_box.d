@@ -44,7 +44,7 @@ class FlowBoxWindow : ApplicationWindow
         createFlowbox(flowbox);
     }
 
-    void createFlowbox(FlowBox flowbox)
+    final void createFlowbox(FlowBox flowbox)
     {
         string[] colors = [
             "AliceBlue", "AntiqueWhite", "AntiqueWhite1", "AntiqueWhite2", "AntiqueWhite3", "AntiqueWhite4",

@@ -193,7 +193,7 @@ class TextViewWindow : ApplicationWindow
         grid.attachNextTo(radioWrapWord, radioWrapChar, PositionType.Right, 1, 1);
     }
 
-    void onClearClicked(Button widget)
+    void onClearClicked()
     {
         TextIter start, end;
         textbuffer.getStartIter(start);

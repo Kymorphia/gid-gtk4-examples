@@ -26,14 +26,14 @@ class ButtonWindow : ApplicationWindow
         setChild(hbox);
 
         Button clickMeButton = Button.newWithLabel("Click Me");
-        clickMeButton.connectClicked((Button button) { writeln("[Click me] button was clicked"); }); // Use a lambda callback
+        clickMeButton.connectClicked(() { writeln("[Click me] button was clicked"); }); // Use a lambda callback
         hbox.append(clickMeButton);
 
         Button openButton = Button.newWithMnemonic("_Open");
         openButton.connectClicked(&onOpenClicked); // Use a callback function
         hbox.append(openButton);
 
-        void onCloseClicked(Button button)
+        void onCloseClicked()
         {
             writeln("Closing window");
             close();
@@ -45,7 +45,7 @@ class ButtonWindow : ApplicationWindow
     }
 }
 
-void onOpenClicked(Button button)
+void onOpenClicked()
 {
   writeln("[Open] button was clicked");
 }

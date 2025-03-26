@@ -64,19 +64,19 @@ class SpinnerWindow : ApplicationWindow
         connectUnrealize(&onWindowDestroy);
     }
 
-    void onButtonStartClicked(Button widget)
+    void onButtonStartClicked()
     {
         startTimer();
     }
 
-    void onButtonStopClicked(Button widget)
+    void onButtonStopClicked()
     {
         stopTimer("Stopped from button");
     }
 
-    void onWindowDestroy(Widget widget)
-    {
-        if (timeoutId)
+    void onWindowDestroy()
+    {   // Remove the timeout callback if it is active
+        if (timeoutId != 0)
         {
             Source.remove(timeoutId);
             timeoutId = 0;
