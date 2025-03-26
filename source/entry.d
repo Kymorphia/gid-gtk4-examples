@@ -83,6 +83,15 @@ class EntryWindow : ApplicationWindow
         passEntry.setShowPeekIcon = true;
         passEntry.setMarginTop = 24;
         vbox.append(passEntry);
+
+        // Remove any active timeout callback when window is closed (will keep window object alive otherwise)
+        connectUnrealize(() {
+            if (timeoutId != 0)
+            {
+                Source.remove(timeoutId);
+                timeoutId = 0;
+            }
+        });
     }
 
     void onEditableToggled(CheckButton button)
@@ -104,7 +113,12 @@ class EntryWindow : ApplicationWindow
         }
         else
         {
-            Source.remove(timeoutId);
+            if (timeoutId != 0)
+            {
+                Source.remove(timeoutId);
+                timeoutId = 0;
+            }
+
             entry.setProgressPulseStep = 0;
         }
     }

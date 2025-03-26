@@ -1,6 +1,7 @@
 module progress_bar;
 
 import glib.global : timeoutAdd;
+import glib.source;
 import glib.types : PRIORITY_DEFAULT;
 import gtk.application;
 import gtk.application_window;
@@ -47,6 +48,15 @@ class ProgressBarWindow : ApplicationWindow
         vbox.append(rightToLeftButton);
 
         timeoutId = timeoutAdd(PRIORITY_DEFAULT, 50, &onTimeout); // 50 ms interval
+
+        // Remove any active timeout callback when window is closed (will keep window object alive otherwise)
+        connectUnrealize(() {
+            if (timeoutId != 0)
+            {
+                Source.remove(timeoutId);
+                timeoutId = 0;
+            }
+        });
     }
 
     void onShowTextToggled(CheckButton button)
