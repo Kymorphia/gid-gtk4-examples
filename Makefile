@@ -1,7 +1,7 @@
 all: build
 
 build:
-	dub build --compiler=ldc2
+	dub build --compiler=ldc2 --debug debug
 
 clean:
 	dub clean
