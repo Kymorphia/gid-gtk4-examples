@@ -80,6 +80,11 @@ class ColorSwatch : Button
         area.setSizeRequest(24, 24);
         area.setDrawFunc(&drawButtonColor);
         setChild(area);
+
+        // Leak work around to break a C/D reference cycle between ColorSwatch -> DrawingArea -> drawButtonColor -> ColorSwatch
+        connectUnrealize(() {
+            area.setDrawFunc(null);
+        });
     }
 
     void drawButtonColor(DrawingArea area, Context cr, int width, int height)

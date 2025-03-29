@@ -30,7 +30,6 @@ class TextViewExample : Example
 
 class TextViewWindow : ApplicationWindow
 {
-    ApplicationWindow window;
     TextView textview;
     TextBuffer textbuffer;
     TextTag tagBold, tagItalic, tagUnderline, tagFound;
@@ -48,6 +47,15 @@ class TextViewWindow : ApplicationWindow
         createTextView;
         createToolbar;
         createButtons;
+
+        // Leak work around to break C/D reference cycles
+        connectCloseRequest(() {
+            textview = null;
+            textbuffer = null;
+            box = null;
+            tagBold = tagItalic = tagUnderline = tagFound = null;
+            return false; // Let other handlers run
+        });
     }
 
     void createTextView()

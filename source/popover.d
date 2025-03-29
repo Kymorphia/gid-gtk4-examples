@@ -49,5 +49,9 @@ class PopoverWindow : ApplicationWindow
         popover2.setPosition(PositionType.Left);
 
         button2.connectClicked(() { popover2.popup; });
+
+        // This is a workaround to suppress a Gtk warning when finalizing the Button which is the parent of popover2.
+        // More details described here: https://discourse.gnome.org/t/gtk4-gtkpopover-finalizing-warning/25881/3
+        button2.connectUnrealize(() { popover2.unparent; });
     }
 }

@@ -15,6 +15,7 @@ import gtk.single_selection;
 import gtk.tree_expander;
 import gtk.tree_list_model;
 import gtk.tree_list_row;
+import gtk.window;
 import std.algorithm : canFind, map, sort;
 import std.array : array, join, split;
 import std.ascii : uppercase;
@@ -138,6 +139,13 @@ class AppTree : ScrolledWindow
     {
       auto window = example.createWindow(app);
       window.present;
+
+      // Works around a memory leak issue with cyclical C <-> D references with Gtk4, Window derived objects, and callback delegates that reference parent objects.
+      // Details described in this post: https://discourse.gnome.org/t/resolving-gtk4-circular-references-in-gid-a-d-gobject-introspection-binding-generator/27993
+      window.connectCloseRequest((Window window) {
+        window.runDispose; // Disconnect all window children to break reference cycles
+        return false; // Run other signal handlers (if any)
+      });
     }
   }
 
