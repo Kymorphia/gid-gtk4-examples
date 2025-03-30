@@ -5,6 +5,7 @@ import gdk.content_provider;
 import gdk.display;
 import gdk.texture;
 import gio.async_result;
+import glib.error;
 import gobject.object;
 import gobject.value;
 import gtk.application;
@@ -15,6 +16,8 @@ import gtk.entry;
 import gtk.picture;
 import gtk.types : Align, Orientation;
 import pango.types : Weight, Style, Underline;
+
+import std.stdio : writeln;
 
 import example;
 
@@ -84,8 +87,11 @@ class ClipboardWindow : ApplicationWindow
 
     void clipboardReadTextAsync(ObjectG obj, AsyncResult result)
     {
-        if (auto text = clipboard.readTextFinish(result))
-            entry.setText(text);
+        try
+            if (auto text = clipboard.readTextFinish(result))
+                entry.setText(text);
+        catch (ErrorG err)
+            writeln("Failed to read text from clipboard: ", err.message);
     }
 
     void onCopyImageClicked()
@@ -104,7 +110,10 @@ class ClipboardWindow : ApplicationWindow
 
     void clipboardReadTextureAsync(ObjectG obj, AsyncResult result)
     {
-        if (auto texture = clipboard.readTextureFinish(result))
-            picture.setPaintable(texture);
+        try
+            if (auto texture = clipboard.readTextureFinish(result))
+                picture.setPaintable(texture);
+        catch (ErrorG err)
+            writeln("Failed to read a texture from clipboard: ", err.message);
     }
 }
