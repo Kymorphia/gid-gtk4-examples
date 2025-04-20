@@ -31,7 +31,7 @@ class DropDownWindow : ApplicationWindow
         setChild(dropdown);
     }
 
-    void onStringSelected(ParamSpec pspec, ObjectG dropdownObj)
+    void onStringSelected(ParamSpec pspec, ObjectWrap dropdownObj)
     {
         if (auto dropdown = cast(DropDown)dropdownObj)
             if (auto selected = cast(StringObject)dropdown.getSelectedItem)

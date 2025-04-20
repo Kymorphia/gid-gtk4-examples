@@ -58,21 +58,21 @@ class AppWindow : ApplicationWindow
         setShowMenubar = true;
 
         // Maximize action
-        auto boolVariant = new VariantG(false);
+        auto boolVariant = new Variant(false);
         auto maxAction = SimpleAction.newStateful("maximize", null, boolVariant);
         maxAction.connectChangeState(&onMaximizeToggle);
         addAction(maxAction);
 
         // Keep maximize action in sync with window state
         connectNotify("maximized", () {
-            maxAction.setState(new VariantG(isMaximized));
+            maxAction.setState(new Variant(isMaximized));
         });
 
         auto appTree = new AppTree(app);
         setChild(appTree);
     }
 
-    void onMaximizeToggle(VariantG value, SimpleAction action)
+    void onMaximizeToggle(Variant value, SimpleAction action)
     {
         action.setState(value);
         if (value.get!bool)

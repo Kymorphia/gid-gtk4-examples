@@ -45,7 +45,7 @@ class SwitchWindow : ApplicationWindow
         hbox.append(switch2);
     }
 
-    void onSwitchActivated(ParamSpec pspec, ObjectG obj)
+    void onSwitchActivated(ParamSpec pspec, ObjectWrap obj)
     {
         if (auto switchObj = cast(Switch)obj)
         {

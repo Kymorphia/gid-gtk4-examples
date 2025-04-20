@@ -85,12 +85,12 @@ class ClipboardWindow : ApplicationWindow
         clipboard.readTextAsync(null, &clipboardReadTextAsync);
     }
 
-    void clipboardReadTextAsync(ObjectG obj, AsyncResult result)
+    void clipboardReadTextAsync(ObjectWrap obj, AsyncResult result)
     {
         try
             if (auto text = clipboard.readTextFinish(result))
                 entry.setText(text);
-        catch (ErrorG err)
+        catch (ErrorWrap err)
             writeln("Failed to read text from clipboard: ", err.message);
     }
 
@@ -108,12 +108,12 @@ class ClipboardWindow : ApplicationWindow
         clipboard.readTextureAsync(null, &clipboardReadTextureAsync);
     }
 
-    void clipboardReadTextureAsync(ObjectG obj, AsyncResult result)
+    void clipboardReadTextureAsync(ObjectWrap obj, AsyncResult result)
     {
         try
             if (auto texture = clipboard.readTextureFinish(result))
                 picture.setPaintable(texture);
-        catch (ErrorG err)
+        catch (ErrorWrap err)
             writeln("Failed to read a texture from clipboard: ", err.message);
     }
 }

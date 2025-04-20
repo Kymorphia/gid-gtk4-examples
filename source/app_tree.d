@@ -78,7 +78,7 @@ class AppTree : ScrolledWindow
       categoryExampleItems[cat] = objs.sort!((a, b) => itemObjName(a) < itemObjName(b)).array;
   }
 
-  private ListModel createListModel(ObjectG item)
+  private ListModel createListModel(ObjectWrap item)
   {
     auto listStore = new ListStore(GTypeEnum.Object);
     auto appItem = cast(AppTreeItem)item;
@@ -97,14 +97,14 @@ class AppTree : ScrolledWindow
     return new AppTreeItem(exampleObject);
   }
 
-  private void onNameItemSetup(ObjectG obj)
+  private void onNameItemSetup(ObjectWrap obj)
   {
     auto treeExpander = new TreeExpander;
     treeExpander.setChild(new Label(cast(string)null));
     (cast(ListItem)obj).setChild(treeExpander);
   }
 
-  private void onNameItemBind(ObjectG obj)
+  private void onNameItemBind(ObjectWrap obj)
   {
     auto listItem = cast(ListItem)obj;
     auto treeListRow = cast(TreeListRow)listItem.getItem;
@@ -186,9 +186,9 @@ string itemObjName(Object obj)
 }
 
 /// GObject wrapper for an item in a ListModel for AppTree ColumnView
-class AppTreeItem : ObjectG
+class AppTreeItem : ObjectWrap
 {
-  mixin(objectGMixin); // Include expected boilerplate ObjectG constructors
+  mixin(objectMixin); // Include expected boilerplate ObjectWrap constructors
 
   /**
    * Create a new tree item.
