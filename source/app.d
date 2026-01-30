@@ -75,7 +75,7 @@ class AppWindow : ApplicationWindow
     void onMaximizeToggle(Variant value, SimpleAction action)
     {
         action.setState(value);
-        if (value.get!bool)
+        if (value.get!int)
             maximize;
         else
             unmaximize;

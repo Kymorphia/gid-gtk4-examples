@@ -73,7 +73,7 @@ class ColorSwatch : Button
 
     this(string strColor)
     {
-        color = new RGBA;
+        color = RGBA();
         color.parse(strColor);
 
         auto area = new DrawingArea;
