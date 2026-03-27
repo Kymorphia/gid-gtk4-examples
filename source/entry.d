@@ -78,11 +78,7 @@ class EntryWindow : ApplicationWindow
         hbox.append(icon);
 
         // Gtk.PasswordEntry
-        auto passEntry = new PasswordEntry;
-        passEntry.setProperty("placeholder-text", new Value("Password Entry"));
-        passEntry.setShowPeekIcon = true;
-        passEntry.setMarginTop = 24;
-        vbox.append(passEntry);
+        vbox.append(PasswordEntry.builder.placeholderText("Password Entry").showPeekIcon(true).marginTop(24).build);
 
         // Remove any active timeout callback when window is closed (will keep window object alive otherwise)
         connectUnrealize(() {

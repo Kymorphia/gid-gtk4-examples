@@ -26,22 +26,16 @@ class SwitchWindow : ApplicationWindow
         super(app);
         setTitle("Switch Demo");
 
-        Box hbox = new Box(Orientation.Horizontal, 6);
-        hbox.setHomogeneous(true);
-        hbox.setMarginTop(24);
-        hbox.setMarginBottom(24);
+        auto hbox = Box.builder.orientation(Orientation.Horizontal).spacing(6).homogeneous(true).marginTop(24)
+            .marginBottom(24).build;
         setChild(hbox);
 
-        Switch switch1 = new Switch;
+        auto switch1 = Switch.builder.active(false).halign(Align.Center).build;
         switch1.connectNotify("active", &onSwitchActivated); // Connect to the notify signal for 'active' property
-        switch1.setActive(false);
-        switch1.setHalign(Align.Center);
         hbox.append(switch1);
 
-        Switch switch2 = new Switch;
+        auto switch2 = Switch.builder.active(true).halign(Align.Center).build;
         switch2.connectNotify("active", &onSwitchActivated);
-        switch2.setActive(true);
-        switch2.setHalign(Align.Center);
         hbox.append(switch2);
     }
 

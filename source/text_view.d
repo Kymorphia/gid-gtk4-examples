@@ -60,9 +60,7 @@ class TextViewWindow : ApplicationWindow
 
     void createTextView()
     {
-        ScrolledWindow scrolledWindow = new ScrolledWindow;
-        scrolledWindow.setHexpand(true);
-        scrolledWindow.setVexpand(true);
+        ScrolledWindow scrolledWindow = ScrolledWindow.builder.hexpand(true).vexpand(true).build;
         box.append(scrolledWindow);
 
         textview = new TextView;
@@ -74,29 +72,23 @@ class TextViewWindow : ApplicationWindow
         );
         scrolledWindow.setChild(textview);
 
-        tagBold = new TextTag("bold");
-        tagBold.setProperty("weight", Weight.Bold);
+        tagBold = TextTag.builder.name("bold").weight(Weight.Bold).build;
         textbuffer.getTagTable.add(tagBold);
 
-        tagItalic = new TextTag("italic");
-        tagItalic.setProperty("style", Style.Italic);
+        tagItalic = TextTag.builder.name("italic").style(Style.Italic).build;
         textbuffer.getTagTable.add(tagItalic);
 
-        tagUnderline = new TextTag("underline");
-        tagUnderline.setProperty("underline", Underline.Single);
+        tagUnderline = TextTag.builder.name("underline").underline(Underline.Single).build;
         textbuffer.getTagTable.add(tagUnderline);
 
-        tagFound = new TextTag("found");
-        tagFound.setProperty("background", "yellow");
+        tagFound = TextTag.builder.name("found").background("yellow").build;
         textbuffer.getTagTable.add(tagFound);
     }
 
     void createToolbar()
     {
-        Box toolbar = new Box(Orientation.Horizontal, 6);
-        toolbar.setMarginTop(6);
-        toolbar.setMarginStart(6);
-        toolbar.setMarginEnd(6);
+        Box toolbar = Box.builder.orientation(Orientation.Horizontal).spacing(6)
+            .marginTop(6).marginStart(6).marginEnd(6).build;
         box.prepend(toolbar);
 
         void applyTag(TextTag tag)
@@ -121,35 +113,28 @@ class TextViewWindow : ApplicationWindow
         toolbar.append(new Separator(Orientation.Vertical));
 
         // newFromIconName is a method of parent Button class, cast return value to ToggleButton
-        auto justifyLeft = new ToggleButton;
-        justifyLeft.setIconName("format-justify-left-symbolic");
+        auto justifyLeft = ToggleButton.builder.iconName("format-justify-left-symbolic").build;
         toolbar.append(justifyLeft);
 
         justifyLeft.connectToggled((ToggleButton btn) {
             if (btn.getActive) textview.setJustification(Justification.Left);
         });
 
-        auto justifyCenter = new ToggleButton;
-        justifyCenter.setIconName("format-justify-center-symbolic");
-        justifyCenter.setGroup(justifyLeft);
+        auto justifyCenter = ToggleButton.builder.iconName("format-justify-center-symbolic").group(justifyLeft).build;
         toolbar.append(justifyCenter);
 
         justifyCenter.connectToggled((ToggleButton btn) {
             if (btn.getActive) textview.setJustification(Justification.Center);
         });
 
-        auto justifyRight = new ToggleButton;
-        justifyRight.setIconName("format-justify-right-symbolic");
-        justifyRight.setGroup(justifyLeft);
+        auto justifyRight = ToggleButton.builder.iconName("format-justify-right-symbolic").group(justifyLeft).build;
         toolbar.append(justifyRight);
 
         justifyRight.connectToggled((ToggleButton btn) {
             if (btn.getActive) textview.setJustification(Justification.Right);
         });
 
-        auto justifyFill = new ToggleButton;
-        justifyFill.setIconName("format-justify-fill-symbolic");
-        justifyFill.setGroup(justifyLeft);
+        auto justifyFill = ToggleButton.builder.iconName("format-justify-fill-symbolic").group(justifyLeft).build;
         toolbar.append(justifyFill);
 
         justifyFill.connectToggled((ToggleButton btn) {
@@ -158,8 +143,8 @@ class TextViewWindow : ApplicationWindow
 
         toolbar.append(new Separator(Orientation.Vertical));
 
-        auto buttonClear = Button.newFromIconName("edit-clear-symbolic");
-        buttonClear.setTooltipText("Clear text buffer formatting tags");
+        auto buttonClear = Button.builder.iconName("edit-clear-symbolic")
+            .tooltipText("Clear text buffer formatting tags").build;
         buttonClear.connectClicked(&onClearClicked);
         toolbar.append(buttonClear);
 
@@ -175,28 +160,23 @@ class TextViewWindow : ApplicationWindow
         Grid grid = new Grid;
         box.append(grid);
 
-        auto checkEditable = CheckButton.newWithLabel("Editable");
-        checkEditable.setActive(true);
+        auto checkEditable = CheckButton.builder.label("Editable").active(true).build;
         checkEditable.connectToggled(&onEditableToggled);
         grid.attach(checkEditable, 0, 0, 1, 1);
 
-        auto checkCursor = CheckButton.newWithLabel("Cursor Visible");
-        checkCursor.setActive(true);
+        auto checkCursor = CheckButton.builder.label("Cursor Visible").active(true).build;
         checkEditable.connectToggled(&onCursorToggled); // Note: This should be checkCursor
         grid.attachNextTo(checkCursor, checkEditable, PositionType.Right, 1, 1);
 
-        auto radioWrapNone = CheckButton.newWithLabel("No Wrapping");
-        radioWrapNone.setActive(true);
+        auto radioWrapNone = CheckButton.builder.label("No Wrapping").active(true).build;
         radioWrapNone.connectToggled((CheckButton btn) { textview.setWrapMode(WrapMode.None); });
         grid.attach(radioWrapNone, 0, 1, 1, 1);
 
-        auto radioWrapChar = CheckButton.newWithLabel("Character Wrapping");
-        radioWrapChar.setGroup(radioWrapNone);
+        auto radioWrapChar = CheckButton.builder.label("Character Wrapping").group(radioWrapNone).build;
         radioWrapChar.connectToggled((CheckButton btn) { textview.setWrapMode(WrapMode.Char); });
         grid.attachNextTo(radioWrapChar, radioWrapNone, PositionType.Right, 1, 1);
 
-        auto radioWrapWord = CheckButton.newWithLabel("Word Wrapping");
-        radioWrapWord.setGroup(radioWrapNone);
+        auto radioWrapWord = CheckButton.builder.label("Word Wrapping").group(radioWrapNone).build;
         radioWrapWord.connectToggled((CheckButton btn) { textview.setWrapMode(WrapMode.Word); });
         grid.attachNextTo(radioWrapWord, radioWrapChar, PositionType.Right, 1, 1);
     }

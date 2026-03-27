@@ -47,8 +47,7 @@ class SpinnerWindow : ApplicationWindow
         label = new Label(cast(string)null);
         mainBox.append(label);
 
-        entry = new Entry;
-        entry.setText("10");
+        entry = Entry.builder.text("10").build;
         mainBox.append(entry);
 
         buttonStart = Button.newWithLabel("Start timer");

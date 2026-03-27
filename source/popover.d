@@ -43,11 +43,10 @@ class PopoverWindow : ApplicationWindow
         Button button2 = Button.newWithLabel("Click Me 2");
         box.append(button2);
 
-        auto popover2 = new Popover();
-        popover2.setChild(new Label("Another Popup!"));
-        popover2.setParent(button2);
-        popover2.setPosition(PositionType.Left);
+        auto popover2 = Popover.builder.child(new Label("Another Popup!"))
+            .position(PositionType.Left).build;
 
+        popover2.setParent(button2);
         button2.connectClicked(() { popover2.popup; });
 
         // This is a workaround to suppress a Gtk warning when finalizing the Button which is the parent of popover2.

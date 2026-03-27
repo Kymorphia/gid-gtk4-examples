@@ -29,49 +29,32 @@ class ListBoxWindow : ApplicationWindow
         setDefaultSize(400, -1);
         setTitle("ListBox Demo");
 
-        auto boxOuter = new Box(Orientation.Vertical, 24);
-        boxOuter.setMarginStart = 24;
-        boxOuter.setMarginEnd = 24;
-        boxOuter.setMarginTop = 24;
-        boxOuter.setMarginBottom = 24;
+        auto boxOuter = Box.builder.orientation(Orientation.Vertical).spacing(24).margin(24).build;
         setChild(boxOuter);
 
         // First ListBox
-        auto listbox = new ListBox;
-        listbox.setSelectionMode(SelectionMode.None);
-        listbox.setShowSeparators(true);
+        auto listbox = ListBox.builder.selectionMode(SelectionMode.None).showSeparators(true).build;
         boxOuter.append(listbox);
 
         // First ListBox Row
         auto row = new ListBoxRow;
+
         auto hbox = new Box(Orientation.Horizontal, 24);
         row.setChild(hbox);
+
         auto vbox = new Box(Orientation.Vertical, 0);
         hbox.append(vbox);
-        auto label1 = new Label("Automatic Date & Time");
-        label1.setXalign(0);
-        auto label2 = new Label("Requires internet access");
-        label2.setXalign(0);
-        vbox.append(label1);
-        vbox.append(label2);
 
-        auto sw = new Switch;
-        sw.setHexpand(true);
-        sw.setHalign(Align.End);
-        sw.setValign(Align.Center);
-        hbox.append(sw);
+        vbox.append(Label.builder.label("Automatic Date & Time").xalign(0).build);
+        vbox.append(Label.builder.label("Requires internet access").xalign(0).build);
+        hbox.append(Switch.builder.hexpand(true).halign(Align.End).valign(Align.Center).build);
 
         listbox.append(row);
 
         // Second ListBox Row
         hbox = new Box(Orientation.Horizontal, 24);
-        auto label = new Label("Enable Automatic Update");
-        label.setXalign(0);
-        auto check = new CheckButton;
-        check.setHexpand(true);
-        check.setHalign(Align.End);
-        hbox.append(label);
-        hbox.append(check);
+        hbox.append(Label.builder.label("Enable Automatic Update").xalign(0).build);
+        hbox.append(CheckButton.builder.hexpand(true).halign(Align.End).build);
         listbox.append(hbox);
 
         // Second ListBox

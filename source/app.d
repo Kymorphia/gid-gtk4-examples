@@ -88,7 +88,7 @@ class ExampleApp : gtk.application.Application
 
     this()
     {
-        super("org.example.App", ApplicationFlags.DefaultFlags);
+        super("com.kymorphia.GidGtkExamples", ApplicationFlags.DefaultFlags);
         connectStartup(&onStartup);
         connectActivate(&onActivate);
     }

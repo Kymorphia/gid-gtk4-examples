@@ -29,7 +29,7 @@ class ToggleButtonWindow : ApplicationWindow
         hbox.append(button1);
 
         ToggleButton button2 = ToggleButton.newWithMnemonic("_Button 2");
-        button2.setActive(true);
+        button2.active = true;
         hbox.append(button2);
 
         void onButtonToggled(ToggleButton button)
